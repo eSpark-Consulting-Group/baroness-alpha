@@ -15,6 +15,10 @@ import {
   Text,
   useColorScheme,
   View,
+  NativeModules,
+  StyleProp,
+  ViewStyle,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -58,7 +62,10 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
+  const backgroundStyle: StyleProp<ViewStyle> = {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
@@ -68,7 +75,22 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
+      <View style={{backgroundColor: 'pink', alignItems: 'center', gap: 10}}>
+        <Text style={{fontSize: 29, color: '#000000'}}>V1</Text>
+        <TouchableOpacity
+          style={{
+            padding: 10,
+            borderWidth: 1,
+            borderRadius: 5,
+            borderColor: '#164fca',
+            backgroundColor: '#164fca88',
+          }}>
+          <Text style={{fontSize: 18, color: '#ffffff'}}>
+            Install Next Update
+          </Text>
+        </TouchableOpacity>
+      </View>
+      {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
@@ -91,7 +113,7 @@ function App(): React.JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </SafeAreaView>
   );
 }

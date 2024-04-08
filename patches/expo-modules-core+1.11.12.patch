@@ -1,0 +1,26 @@
+diff --git a/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle b/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
+index 4a413e3..3d2f2fe 100644
+--- a/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
++++ b/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
+@@ -62,7 +62,7 @@ ext.useExpoPublishing = {
+     publishing {
+       publications {
+         release(MavenPublication) {
+-          from components.release
++          from components.findByName('release')
+         }
+       }
+       repositories {
+diff --git a/node_modules/expo-modules-core/android/build.gradle b/node_modules/expo-modules-core/android/build.gradle
+index 04a3068..d29c019 100644
+--- a/node_modules/expo-modules-core/android/build.gradle
++++ b/node_modules/expo-modules-core/android/build.gradle
+@@ -150,7 +150,7 @@ android {
+ 
+     externalNativeBuild {
+       cmake {
+-        abiFilters (*reactNativeArchitectures())
++        // abiFilters (*reactNativeArchitectures())
+         arguments "-DANDROID_STL=c++_shared",
+           "-DREACT_NATIVE_DIR=${REACT_NATIVE_DIR}",
+           "-DREACT_NATIVE_TARGET_VERSION=${REACT_NATIVE_TARGET_VERSION}",
