@@ -19,6 +19,7 @@ import {
   StyleProp,
   ViewStyle,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 
 import {
@@ -28,6 +29,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import {Path, Svg} from 'react-native-svg';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -75,9 +78,37 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <View style={{backgroundColor: 'pink', alignItems: 'center', gap: 10}}>
-        <Text style={{fontSize: 29, color: '#000000'}}>V1</Text>
+      <View
+        style={{
+          backgroundColor: 'red',
+          width: Dimensions.get('window').width,
+          height: Dimensions.get('window').height,
+        }}>
+        <Svg
+          // height="50%"
+          // width="50%"
+          style={{}}
+          viewBox=" 0 0 100 100">
+          {/* <Path
+            d="M20 5 L200 5 a10,10 0 0 1 10,10 L210 80 a10,10 0 0 0 10,10 L400 90 a10,10 0 0 1 10,10 L410 220 a10,10 0 0 0 10,10 a5,5 0 0 1 5,5 L425 280 a10,10 0 0 1 -10,10 L155 290 a30,30 0 0 1 -30,-30 L125 180 a10,10 0 0 0 -10,-10 L30 170 a10,10 0 0 1 -10,-10 z"
+            strokeWidth={3}
+            stroke={'#000'}
+          /> */}
+          <Path
+            d="M-50 5 L70 5 a10,10 0 0 1 10,10 L80 40 a10,10 0 0 1 -10,10 L30 50z"
+            fill={'none'}
+            stroke="black"></Path>
+        </Svg>
+      </View>
+      <View
+        style={{
+          backgroundColor: 'pink',
+          alignItems: 'center',
+          gap: 10,
+        }}>
+        {/* <Text style={{fontSize: 29, color: '#000000'}}>V1</Text>
         <TouchableOpacity
+          onPress={() => getGetFileData()}
           style={{
             padding: 10,
             borderWidth: 1,
@@ -88,7 +119,7 @@ function App(): React.JSX.Element {
           <Text style={{fontSize: 18, color: '#ffffff'}}>
             Install Next Update
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
