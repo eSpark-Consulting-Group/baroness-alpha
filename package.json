@@ -14,7 +14,7 @@
     "@isudaji/react-native-install-apk": "^1.0.5",
     "expo": "^50.0.0",
     "expo-file-system": "~16.0.8",
-    "patch-package": "^8.0.0",
+    "patch-package": "^8.0.1",
     "postinstall-postinstall": "^2.1.0",
     "react": "18.2.0",
     "react-native": "0.73.6",
