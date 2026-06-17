@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@isudaji/react-native-install-apk": "^1.0.5",
-    "expo": "^50.0.0",
+    "expo": "^56.0.12",
     "expo-file-system": "~56.0.8",
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
